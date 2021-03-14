@@ -1,0 +1,1417 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+  --mermaid-theme: night;
+  --node-fill: #BDD5EA;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+/* CSS Document */
+
+/** markdown source **/
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: #cebcca;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #9FB1FF;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #A7A7D9
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #848695;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(51, 51, 51, 0.72);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+}@import "";
+@import "";
+@import "";
+
+:root {
+    --bg-color:  #363B40;
+    --side-bar-bg-color: #2E3033;
+    --text-color: #b8bfc6;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: rgb(34, 34, 34);
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #428bca;
+}
+
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #363B40;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875rem;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: #363B40;
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: #363B40;
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: #363B40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: #363B40;
+    background-color: #363B40;
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 1;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: #fff;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: black;
+    color: #eee;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: #656565;
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: #333;
+    background: #333;
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: #474d54;
+}
+
+.md-search-hit {
+    background: rgba(199, 140, 60, 0.81);
+    color: #eee;
+}
+
+.md-search-hit * {
+    color: #eee;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.export-detail,
+.export-item.active,
+.export-items-list-control {
+    background: #d6d6d4
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><ul><li><p><span>更多待補充：如何安裝Xposed, Lucky Patcher</span></p></li><li><h1><a name="如何在windowsmacos和linux上安装adb" class="md-header-anchor"></a><span>如何在Windows，macOS和Linux上安装ADB</span></h1><p><span>最近在XDA上，我们已经编写了许多教程，向您展示如何访问用户看不见的Android平台的某些功能。这些通常是借助某些命令行Android Debug Bridge（</span><a href='https://www.xda-developers.com/install-adb-windows-macos-linux/'><span>ADB</span></a><span>）命令完成的，该工具是Google为开发人员提供的工具，用于调试其应用程序或系统的各个部分，但我们可以将其用于各种整洁的和隐藏的的把戏。但是，使用命令行并不是每个人都感到满意的，因此，为了教给每个人如何进行这些调整（无论您的技能水平如何），我们一直在包括一些有关如何进行调整的基本步骤。如有必要，请在我们的每个教程中安装ADB。</span></p><p><span>好吧，最近我们的教程数量激增，因此我们决定从以后的教程中排除这些步骤，以避免重复。但是，我们仍然希望我们编写的所有将来的教程对于尽可能多的人来说都易于理解，因此这将是当前指南的重点。专门针对如何在计算机上安装和设置ADB（无论使用哪种操作系统）的分步教程非常适合那些可能尚未设置ADB的用户。</span></p><p><span>这还将使我们在以后编写的要求您在计算机上安装并安装ADB的教程中提供指向本指南的链接。因此，当我们发布需要ADB的新教程之一时，您可以单击链接以了解如何安装ADB，也可以直接忽略它，然后继续下一步。由于ADB可用于多种操作系统，因此我们将介绍Windows，macOS和Linux的一些基本说明。</span></p><hr /><h2><a name="如何设置android调试桥adb）" class="md-header-anchor"></a><span>如何设置Android调试桥（ADB）</span></h2><p><span>注意：在计算机上设置ADB只是方程式的一半，因为您还需要在智能手机或平板电脑上做一些事情才能接受ADB命令。</span></p><h3><a name="手机设定" class="md-header-anchor"></a><span>手机设定</span></h3><ol><li><span>在手机上启动“设置”应用程序。</span></li><li><span>通常，在列表底部附近，点击关于电话选项。</span></li><li><span>然后，点按“内部编号”选项7次以启用“开发人员模式”。完成后，您将看到一条吐司消息。</span></li><li><span>现在回到“设置”主屏幕，您应该看到可以访问的新“开发人员选项”菜单。</span></li><li><span>进入那里并启用“ USB调试模式”选项。</span>
+<img src="https://www.xda-developers.com/files/2017/08/Image-001-1-300x199.png" referrerpolicy="no-referrer" alt="安装adb"></li><li><span>您已完成电话设置过程的一部分。接下来，您需要在下面滚动并遵循针对特定操作系统的其余说明。</span></li></ol><p><span>在计算机上按照操作系统进行操作。</span></p><hr /><h2><a name="如何在microsoft-windows上设置adb" class="md-header-anchor"></a><span>如何在Microsoft Windows上设置ADB</span></h2><ol><li><a href='https://dl.google.com/android/repository/platform-tools-latest-windows.zip'><span>下载适用于Windows的Android SDK平台工具ZIP文件</span></a><span>。</span></li><li><span>将此ZIP文件的内容提取到易于访问的文件夹中（例如C：\ platform-tools）</span></li><li><span>打开Windows资源管理器并浏览到将这个ZIP文件的内容提取到的位置</span></li><li><span>然后从与此ADB二进制文件相同的目录中打开命令提示符。这可以通过按住Shift键并在文件夹中单击鼠标右键，然后单击“在此处打开命令窗口”选项来完成。（某些Windows 10用户可能会看到“ PowerShell”而不是“命令窗口”。）</span><img src="https://www1-lw.xda-cdn.com/files/2017/07/ADBOpenHere.png" referrerpolicy="no-referrer" alt="安装adb"></li><li><span>使用USB电缆将智能手机或平板电脑连接到计算机。将USB模式更改为“文件传输（MTP）”模式。一些OEM可能会或可能不需要此功能，但最好还是将其保留在此模式下以实现一般兼容性。</span></li><li><span>在“命令提示符”窗口中，输入以下命令以启动ADB守护程序： </span><code>adb devices</code></li><li><span>在手机的屏幕上，您应该看到一个提示，允许或拒绝USB调试访问。自然，您将希望在出现提示时授予USB调试访问权限（如果您再也不想看到该提示，请点按“始终允许”复选框）。</span><img src="https://www.xda-developers.com/files/2017/08/Image-002-2-300x180.png" referrerpolicy="no-referrer" alt="安装adb"></li><li><span>最后，从步骤6重新输入命令。如果一切成功，现在您应该在命令提示符（或PowerShell窗口）中看到设备的序列号。</span><img src="https://www.xda-developers.com/files/2021/02/Windows-PowerShell-adb-devices.jpg" referrerpolicy="no-referrer" alt="Windows PowerShell ADB设备"></li></ol><p><span>耶！现在，您可以在设备上运行任何ADB命令！现在，按照我们广泛的教程清单开始改装手机！</span></p><hr /><h2><a name="如何在macos上设置adb" class="md-header-anchor"></a><span>如何在macOS上设置ADB</span></h2><ol><li><a href='https://dl.google.com/android/repository/platform-tools-latest-darwin.zip'><span>下载适用于macOS的Android SDK平台工具ZIP文件</span></a><span>。</span></li><li><span>将ZIP提取到易于访问的位置（例如，桌面）。</span></li><li><span>打开终端。</span></li><li><span>要浏览到将ADB提取到的文件夹，请输入以下命令： </span><code>cd /path/to/extracted/folder/</code></li><li><span>例如，在我的Mac上是这样的： </span><code>cd /Users/Doug/Desktop/platform-tools/</code></li><li><span>使用兼容的USB电缆将设备连接到Mac。将USB连接模式更改为“文件传输（MTP）”模式。并非总是所有设备都需要这样做，但是最好只是将其保留在此模式下，这样就不会遇到任何问题。</span></li><li><span>终端位于与ADB工具相同的文件夹中后，您可以执行以下命令来启动ADB守护程序： </span><code>./adb devices</code></li><li><span>在设备上，您会看到“允许USB调试”提示。允许连接。</span><img src="https://www.xda-developers.com/files/2017/08/Image-002-2-300x180.png" referrerpolicy="no-referrer" alt="安装adb"></li><li><span>最后，从步骤＃7重新输入命令。如果一切成功，现在您应该在macOS的“终端”窗口中看到设备的序列号。</span><img src="https://www.xda-developers.com/files/2021/02/macOS-Terminal-adb-devices.png" referrerpolicy="no-referrer" alt="macOS终端adb设备"></li></ol><p><span>恭喜你！现在，您可以在设备上运行任何ADB命令！现在，按照我们广泛的教程清单开始改装手机！</span></p><p><span>尽管上面的指南肯定会起作用，但是一些经验丰富的macOS用户应该意识到，可以使用非官方的软件包管理器（例如</span><a href='https://formulae.brew.sh/cask/android-platform-tools'><span>Homebrew</span></a><span>或</span><a href='https://ports.macports.org/port/android-platform-tools/summary'><span>MacPorts）</span></a><span>在他们的Mac上安装ADB的简便方法。</span></p><hr /><h2><a name="如何在linux上设置adb" class="md-header-anchor"></a><span>如何在Linux上设置ADB</span></h2><ol><li><a href='https://dl.google.com/android/repository/platform-tools-latest-linux.zip'><span>下载适用于Linux的Android SDK平台工具ZIP文件</span></a><span>。</span></li><li><span>将ZIP提取到易于访问的位置（例如，桌面）。</span></li><li><span>打开一个终端窗口。</span></li><li><span>输入以下命令： </span><code>cd /path/to/extracted/folder/</code></li><li><span>这会将目录更改为您提取ADB文件的位置。</span></li><li><span>因此，例如： </span><code>cd /Users/Doug/Desktop/platform-tools/</code></li><li><span>使用USB电缆将设备连接到Linux机器。将连接模式更改为“文件传输（MTP）”模式。并非每台设备都总是需要这样做，但建议这样做，这样就不会遇到任何问题。</span></li><li><span>终端位于与ADB工具相同的文件夹中后，您可以执行以下命令来启动ADB守护程序： </span><code>./adb devices</code></li><li><span>回到智能手机或平板电脑设备上，您会看到提示，要求您允许USB调试。继续并授予它。</span><img src="https://www.xda-developers.com/files/2017/08/Image-002-2-300x180.png" referrerpolicy="no-referrer" alt="安装adb"></li><li><span>最后，从步骤8重新输入命令。如果一切成功，现在您应该在“终端”窗口输出中看到设备的序列号。</span><img src="https://www.xda-developers.com/files/2021/02/Ubuntu-Linux-adb-devices.png" referrerpolicy="no-referrer" alt="Ubuntu Linux ADB设备"></li></ol><p><span>恭喜！现在，您可以在设备上运行任何ADB命令！现在，按照我们广泛的教程清单开始改装手机！</span></p><p><span>一些Linux用户应该意识到，可以使用更简单的方法在其计算机上安装ADB。上面的指南当然可以为您服务，但是拥有Debian或基于Fedora / SUSE的Linux发行版的用户可以跳过上面指南的步骤1和2，并使用以下命令之一：</span></p><ul><li><p><span>基于Debian的Linux用户可以键入以下命令来安装ADB：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">sudo apt-get install android-tools-adb</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre></li><li><p><span>基于Fedora / SUSE的Linux用户可以键入以下命令来安装ADB：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">sudo yum install android-tools</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre></li></ul><p><span>但是，最好从Android SDK Platform Tools版本中选择最新的二进制文件，因为特定于发行版的软件包通常包含过时的版本。</span></p><p><span>仅仅为了覆盖这里的所有基础知识，用户可能需要在我们在以后的教程中列出的ADB命令之前放置./，特别是当他们直接使用从Platform Tools ZIP中提取的二进制文件时。* nix用户（或运行PowerShell的Windows用户）可能已经知道了这一点，但是再一次，无论您了解多少操作系统，我们都希望有尽可能多的人了解如何针对Android进行这些调整。</span></p><hr /><h2><a name="下一步" class="md-header-anchor"></a><span>下一步</span></h2><p><span>要检查是否已成功安装ADB，请使用USB电缆将设备连接到PC / Mac，然后</span><code>adb devices</code><span>如上所述运行命令。它应该显示在命令提示符/ PowerShell /终端窗口中列出的设备。如果您得到不同的输出，我们建议从步骤开始。</span></p><h1><a name="如何从windows--linux-pc上的任何目录使用adb或fastboot" class="md-header-anchor"></a><span>如何从Windows / Linux PC上的任何目录使用ADB或Fastboot</span></h1><p><span>如果您已经按照</span><a href='https://www.xda-developers.com/install-adb-windows-macos-linux/'><span>我们的教程学习</span></a><span>如何在计算机上设置</span><a href='https://www.xda-developers.com/install-adb-windows-macos-linux/'><span>adb</span></a><span>和fastboot平台工具，则每次都必须导航到该文件夹可能会很烦，特别是如果您经常使用任一工具时。每当您要在设备上刷新内容时，必须将文件复制到平台工具文件夹中也很烦人。对我来说，这令人沮丧，因为我使用固态硬盘，而且我不喜欢必须将文件复制到平台工具文件夹中，然后再将其删除。但是，可以从Windows或Linux PC上的任何目录运行adb或fastboot工具，因此您无需更改目录即可运行任何命令。</span></p><hr /><h2><a name="什么是path系统变量" class="md-header-anchor"></a><span>什么是PATH系统变量？</span></h2><p><span>Windows使用PATH来指定重要可执行文件的位置。通常，这些文件位于系统目录中，例如C：\ Windows和C：\ Windows \ system32。这就是为什么您可以在命令提示符下键入“ calc”以启动计算器，而不是“ chrome”以启动Google Chrome的原因。在安装应用程序（例如Java）时，有时会更改此变量。Java在安装时会将其自身添加到PATH变量中，这意味着您可以从任何目录使用Java。这对使用Java应用程序的人很有用，因此该程序不必尝试对Java位置进行硬编码。</span></p><p><span>我们将修改PATH系统变量，以允许我们在Windows计算机上的任何地方使用adb或Fastboot。PATH在Linux上也存在，通常包含bin和sbin目录。我还将介绍如何将平台工具添加到Linux PATH变量。</span></p><p><strong><span>注意：这两个教程都需要管理员/ sudo访问权限。</span></strong><span> 添加到Windows有两种方法。我强烈建议使用第一种方法，但是如果您打算大量使用PATH变量，则第二种方法都可以，并且效果更好。</span></p><h2><a name="将adb和fastboot添加到windows-path方法1）" class="md-header-anchor"></a><span>将adb和Fastboot添加到Windows PATH（方法1）</span></h2><p><span>实际上，这并不是将其本身添加到Windows PATH变量中，而是将其添加到PATH变量中已经存在的文件夹中。只需将adb.exe，fastboot.exe，AdbWinApi.dll和AdbWinUsbApi.dll复制到C：\ Windows，就可以了。您现在应该能够从命令行运行adb和fastboot。到目前为止，这是进行此设置的最简单，最简单的方法。如果由于某种原因它不起作用，请按照方法2进行操作。</span></p><h2><a name="将adb和fastboot添加到windows-path方法2）" class="md-header-anchor"></a><span>将adb和Fastboot添加到Windows PATH（方法2）</span></h2><h3><a name="步骤1" class="md-header-anchor"></a><span>步骤1</span></h3><p><span>打开Windows资源管理器，然后右键单击“我的电脑”。选择“属性”，您将看到一个显示一些系统信息的屏幕。</span></p><p><img src="https://www.xda-developers.com/files/2017/08/properties.png" referrerpolicy="no-referrer" alt="img"></p><h3><a name="步骤2" class="md-header-anchor"></a><span>步骤2</span></h3><p><span>选择“高级系统设置”。</span></p><p><img src="https://www.xda-developers.com/files/2017/08/advanced-system-settings-1024x241.png" referrerpolicy="no-referrer" alt="img"></p><h3><a name="步骤3" class="md-header-anchor"></a><span>步骤3</span></h3><p><span>选择“环境变量”</span></p><p><img src="https://www.xda-developers.com/files/2017/08/environment-variables.png" referrerpolicy="no-referrer" alt="img"></p><h3><a name="步骤4" class="md-header-anchor"></a><span>步骤4</span></h3><p><span>查找名为“ Path”的变量，然后双击它。</span></p><p><img src="https://www.xda-developers.com/files/2017/08/path.png" referrerpolicy="no-referrer" alt="img"></p><h3><a name="步骤5" class="md-header-anchor"></a><span>步骤5</span></h3><p><span>单击“浏览”，然后导航到您提取adb文件的文件夹。在您打开的所有Windows中，下一步“确定”。启动新的PowerShell或命令提示符，然后键入“ adb”以确认已添加位置。如果没有，请重新启动PC，然后重试。</span></p><p><span>在单击“浏览”之前，请确保没有突出显示任何字段。如果某个字段突出显示，您将最终替换它。单击列表中不包含任何条目的某处，以确保不替换字段。</span></p><p><img src="https://www.xda-developers.com/files/2017/08/minimal-added.png" referrerpolicy="no-referrer" alt="img"></p><hr /><h2><a name="将adb和fastboot添加到linux-path" class="md-header-anchor"></a><span>将adb和Fastboot添加到Linux PATH</span></h2><p><span>我将仅通过命令行在本教程中使用Ubuntu。您可以通过GUI编辑.bashrc文件，但是需要导航到主目录的根目录并按Ctrl + H。确保已下载并解压缩了平台工具。</span></p><h3><a name="步骤1-n839" class="md-header-anchor"></a><span>步骤1</span></h3><p><span>请注意您提取的adb工具的路径。对我来说，我将它们提取到/ home / adam / adb / platform-tools。</span></p><h3><a name="步骤2-n841" class="md-header-anchor"></a><span>步骤2</span></h3><p><span>您需要编辑.bashrc文件。返回您的主目录并运行以下命令。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">sudo nano .bashrc</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre><p><span>如果您更喜欢使用vi或gedit，则可以使用。</span></p><h3><a name="步骤3-n845" class="md-header-anchor"></a><span>步骤3</span></h3><p><span>将以下行添加到.bashrc文件的末尾。请谨慎编辑此文件，请勿添加任何其他内容或更改任何其他内容。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">export PATH=${PATH}:/home/YOUR-USERNAME/path/to/adb</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre><p><span>和类型</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">adb</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre><p><span>检查它是否有效。如果出现错误（通常在64位计算机上），请安装软件包</span><strong><span>glibc.i686</span></strong><span>和</span><strong><span>libstdc ++</span></strong><span>，它应该可以工作。</span></p><hr /><h2><a name="完毕" class="md-header-anchor"></a><span>完毕！</span></h2><p><span>现在，您已经完成了，现在您应该能够简单地从Windows或Linux计算机上的任何位置执行adb或fastboot命令。就像我说的那样，这非常有用，并且还可以改善组织性，因此您无需将所有可刷新文件都放在同一文件夹中。</span></p></li></ul><h1><a name="如何安装twrp" class="md-header-anchor"></a><span>如何安装TWRP</span></h1><p><a href='http://www.xda-developers.com/wp-content/uploads/2015/11/twrp.jpg'><img src="http://www.xda-developers.com/wp-content/uploads/2015/11/twrp.jpg" referrerpolicy="no-referrer" alt="twrp"></a></p><p><span>对于喜欢修改其Android设备的任何人来说，一个重要的工具就是良好的自定义恢复。  自从1996年发明轮毂以来，</span><a href='https://www.xda-developers.com/how-to-install-twrp/'><span>TWRP</span></a><span>一直存在，并一直为</span><a href='https://www.xda-developers.com/how-to-install-twrp/'><span>改装商</span></a><span>提供各种出色的工具。如果您想知道如何在设备上获取TWRP，本指南将为您提供帮助。我还将介绍恢复的所有基本功能及其用途。</span></p><h2><a name="安装twrp" class="md-header-anchor"></a><span>安装TWRP</span></h2><p><span>首先，为您的设备下载TWRP。您可以通过以下链接找到当前支持的设备列表。</span></p><p><a href='https://twrp.me/Devices/'><span>TWRP下载</span></a></p><p><span>现在，我们将介绍几种可用于安装TWRP恢复的方法。在我们开始之前，请继续并在您的设备上启用USB调试。</span></p><figure><table><thead><tr><th><span>安装</span><a href='https://www.xda-developers.com/install-adb-windows-macos-linux/'><span>ADB</span></a><span>和Fastboot驱动程序</span></th></tr></thead><tbody><tr><td><span>要正确设置所有内容，可以使用XDA成员Snoop05创建的这个非常简单的工具。使用此XDA线程中的指南下载安装。</span><a href='https://forum.xda-developers.com/attachment.php?attachmentid=4623157&amp;d=1540039037'><span>15秒的ADB安装程序</span></a></td></tr><tr><td><a href='http://www.xda-developers.com/wp-content/uploads/2015/11/MCPoJ81.png'><img src="http://www.xda-developers.com/wp-content/uploads/2015/11/MCPoJ81.png" referrerpolicy="no-referrer" alt="MCPoJ81"></a></td></tr></tbody></table></figure><figure><table><thead><tr><th><span>启用USB调试</span></th></tr></thead><tbody><tr><td><span>要启用USB调试，请导航至</span><strong><span>“设置”</span></strong><span> &gt;“</span><strong><span>开发人员选项”</span></strong><span> &gt;“ </span><strong><span>USB调试”</span></strong></td></tr><tr><td><a href='http://www.xda-developers.com/wp-content/uploads/2015/11/ezgif-3490912995.gif'><img src="http://www.xda-developers.com/wp-content/uploads/2015/11/ezgif-3490912995.gif" referrerpolicy="no-referrer" alt="ezgif-3490912995"></a></td></tr></tbody></table></figure><h3><a name="通过adb安装" class="md-header-anchor"></a><span>通过ADB安装</span></h3><ol><li><p><span>打开保存TWRP Recovery .img文件的文件夹。</span></p></li><li><p><span>然后在该文件夹中打开一个CMD窗口。为此，</span><strong><span>请按Shift +右键单击</span></strong><span> 文件夹内的任何空白区域，然后选择“</span><strong><span>在此处打开命令窗口”</span></strong><span>。</span></p></li><li><p><span>将您的Android设备连接到PC。在命令窗口中键入以下内容，以将设备引导到引导加载程序/快速引导模式：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">亚行重新启动引导程序</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre><p><span>└如果您请求允许“允许USB调试”，请点按确定。</span></p></li><li><p><span>设备启动进入引导加载程序模式后，请在命令行中键入此内容。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">fastboot闪存恢复twrp - 2.8 。X 。x - xxx 。img</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre><p><span>└在这里用TWRP恢复.img文件的名称修改</span><strong><span>twrp.img</span></strong><span>。</span></p></li><li><p><span>在设备上成功刷新TWRP后，键入此最终命令以重新启动设备。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">fastboot重新启动</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre></li></ol><h3><a name="安装威盛twrp管理器" class="md-header-anchor"></a><span>安装威盛TWRP管理器</span></h3><p><span>TWRP Manager是一个根应用程序，它使您可以备份，还原和安装恢复。如果您的设备与此选项兼容，则它应该比以前的方法容易一些。</span></p><p><a href='http://www.xda-developers.com/wp-content/uploads/2015/11/Screenshot_2015-11-10-01-09-462.jpg'><img src="http://www.xda-developers.com/wp-content/uploads/2015/11/Screenshot_2015-11-10-01-09-462-1024x413.jpg" referrerpolicy="no-referrer" alt="截图_2015-11-10-01-09-46〜2"></a></p><p><a href='https://play.google.com/store/apps/details?id=com.jmz.soft.twrpmanager&amp;hl=en'><span>TWRP经理</span></a></p><h2><a name="twrp功能" class="md-header-anchor"></a><span>TWRP功能</span></h2><h3><a name="nandroid备份" class="md-header-anchor"></a><span>NANDroid备份</span></h3><p><span>执行完整的系统备份，以备不时之需。在您闪存任何类型的ROM之前进行备份始终是一个好主意。</span></p><h3><a name="还原现有备份" class="md-header-anchor"></a><span>还原现有备份</span></h3><p><span>如果您刷新了自己不喜欢的ROM，或者您的软件遇到了某种错误，请从已知的良好备份中还原。</span></p><h3><a name="flash-zip文件" class="md-header-anchor"></a><span>Flash ZIP文件</span></h3><p><span>如果要安装Mod，刷新Gapp或刷新ROM，则需要能够通过恢复来刷新ZIP文件。</span></p><h3><a name="恢复出厂设置" class="md-header-anchor"></a><span>恢复出厂设置</span></h3><p><span>有时您会卡住而无法启动Android操作系统。发生这种情况时，您可以尝试启动TWRP并执行恢复出厂设置。</span></p><h3><a name="修复权限" class="md-header-anchor"></a><span>修复权限</span></h3><p><span>当您刷新ROM时，有时您的系统会忘记将哪些权限授予了不同的应用程序。修复权限会将所有内容恢复为您拥有它们的方式。</span></p><p><span>现在，您应该有了TWRP，并且可以很好地了解可以执行的不同任务。很酷的家伙。</span></p><h1><a name="如何在android上安装自定义rom" class="md-header-anchor"></a><span>如何在Android上安装自定义ROM</span></h1><p><span>自定义ROM是Android最好的东西之一！如果您准备抛弃现有的ROM并获得加载自定义ROM的许多好处（例如，电池改进，性能更好以及更新到最新的Android版本），请按照本指南进行操作。</span><a href='http://www.xda-developers.com/how-to-backup-android/'><span>在继续操作之前，请备份您的数据</span></a><span>！如果您想了解更多有关自定义ROM实际是什么的信息，我们将提供相应的</span><a href='http://www.xda-developers.com/what-is-custom-rom-android/'><span>指南</span></a><span>。</span></p><p><span>对于本指南，您将需要：</span></p><ul><li><span>解锁的引导程序</span></li><li><span>自定义恢复</span></li><li><span>Android设备</span></li><li><a href='http://www.xda-developers.com/download-google-apps-gapps/'><span>GApps</span></a></li><li><span>定制ROM</span></li></ul><h4><a name="步骤1下载rom" class="md-header-anchor"></a><strong><span>步骤1：下载ROM</span></strong></h4><p><span>使用适当的XDA论坛为您的设备查找ROM。确保为您的设备下载正确的版本。许多手机都有几种变体。Sony Z Ultra的版本比我的朋友多，而且根据其附带的载体，两者都需要不同的ROM。因此，请通过验证它是否与您的手机型号兼容来确保获得正确的ROM。</span>
+<a href='http://www.xda-developers.com/wp-content/uploads/2015/08/image091.png'><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/image091-1024x640.png" referrerpolicy="no-referrer" alt="image09"></a></p><p><span>找到所需的ROM后，下载.ZIP文件，最大1.5Gb时将为500mb。不要提取它！然后</span><a href='http://www.xda-developers.com/download-google-apps-gapps/'><span>找到相应的GApp</span></a><span>。如果要安装在4.4.2上运行的ROM，则需要用于4.4.2的GApps软件包。将ROM和GApp保存到SD卡，内部存储器或闪存驱动器。</span></p><h4><a name="第2步启动恢复" class="md-header-anchor"></a><strong><span>第2步：启动恢复</span></strong></h4><p><span>要启动恢复，请使用恢复组合按钮。如果您不知道要按哪个按钮以访问恢复，</span><a href='http://www.xda-developers.com/how-to-boot-to-recovery/'><span>请参阅本指南</span></a><span>。在大多数设备上，</span><strong><span>按住Vol Down +电源5秒钟即可。</span></strong><span>一旦恢复，您应该会看到类似这样的信息……</span></p><p><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/image001-576x1024.png" referrerpolicy="no-referrer" alt="image00"><em><span>这是</span><a href='https://www.xda-developers.com/how-to-install-twrp/'><span>TWRP</span></a><span>！！</span></em></p><p><a href='http://www.xda-developers.com/wp-content/uploads/2015/08/clockwork.jpg'><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/clockwork-576x1024.jpg" referrerpolicy="no-referrer" alt="img"></a><em><span>这是ClockworkMod！双重赞！</span></em></p><h4><a name="步骤3flash-rom" class="md-header-anchor"></a><strong><span>步骤3：Flash ROM</span></strong></h4><p><span>现在，继续并选择“安装”…</span></p><p><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/image042.png" referrerpolicy="no-referrer" alt="image04"><em><span>在TWRP上安装</span></em></p><p><a href='http://www.xda-developers.com/wp-content/uploads/2015/08/install.jpg'><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/install-576x1024.jpg" referrerpolicy="no-referrer" alt="img"></a><em><span>在ClockworkMod中安装</span></em></p><p><span>选择ROM文件后。继续闪烁拉链…</span></p><p><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/image101.jpg" referrerpolicy="no-referrer" alt="image10"><em><span>在TWRP中套用更新</span></em></p><p><a href='http://www.xda-developers.com/wp-content/uploads/2015/08/update2.jpg'><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/update2.jpg" referrerpolicy="no-referrer" alt="img"></a><em><span>在ClockworkMod中应用更新</span></em></p><p><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/image032.png" referrerpolicy="no-referrer" alt="image03"><em><span>用TWRP刷新文件</span></em></p><p><a href='http://www.xda-developers.com/wp-content/uploads/2015/08/flashcwm.jpg'><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/flashcwm.jpg" referrerpolicy="no-referrer" alt="img"></a><em><span>使用ClockworkMod刷新文件</span></em></p><h4><a name="步骤4清除快取" class="md-header-anchor"></a><strong><span>步骤4：清除快取</span></strong></h4><p><span>安装完成后，退出并清除缓存…</span></p><p><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/image013.jpg" referrerpolicy="no-referrer" alt="image01"><em><span>用TWRP擦拭</span></em></p><p><img src="http://www.xda-developers.com/wp-content/uploads/2015/08/wipe.jpg" referrerpolicy="no-referrer" alt="擦拭"><em><span>用ClockworkMod擦拭</span></em></p><p><span>尽管这是刷新ROM的最常见方法，但是每种设备都有许多不同的特定方法。我将列出一些最常见的软件，这些软件将使您可以从计算机中刷新ROM。当您将库存ROM闪回到设备上时，最好使用这些功能。</span></p><ul><li><span>对于</span><strong><span>Nexus</span></strong><span> 设备，请使用</span><strong><a href='http://forum.xda-developers.com/showthread.php?t=1766475'><span>Nexus Root工具包</span></a></strong></li><li><span>对于</span><strong><span>三星</span></strong><span> 设备，请使用</span><strong><a href='http://forum.xda-developers.com/galaxy-s3/themes-apps/27-08-2013-odin-3-09-odin-1-85-versions-t2189539'><span>Odin</span></a></strong></li><li><span>对于 </span><strong><span>Sony</span></strong><span>设备，请使用</span><strong><a href='http://www.flashtool.net/index.php'><span>FlashTool</span></a></strong></li></ul><h1><a name="如何安装magisk" class="md-header-anchor"></a><span>如何安装Magisk</span></h1><p><span>近年来，随着Google的SafetyNet系统保护了更多Android功能，Magisk变得越来越流行。使用Magisk（由</span><a href='https://forum.xda-developers.com/member.php?u=4470081'><span>topjohnwu</span></a><span>首先开发），您可以拥有root和自定义mod，同时仍可以使用Google Pay等服务。通过使系统分区保持不变并修改引导分区来工作。这就是为什么它被称为“无系统”根方法的原因。将所有组件安装到位后，安装非常容易。</span></p><h3><a name="您需要什么" class="md-header-anchor"></a><span>您需要什么：</span></h3><ul><li><p><span>运行Android 4.2+的设备</span></p></li><li><p><span>自定义恢复（</span></p><p><span>如何安装</span></p><p><span>）</span></p><ul><li><span>我们将在本指南中使用</span><a href='https://www.xda-developers.com/how-to-install-twrp/'><span>TWRP</span></a></li></ul></li></ul><h3><a name="1下载magisk" class="md-header-anchor"></a><span>1.下载Magisk</span></h3><p><img src="https://www.xda-developers.com/files/2017/01/magisk.png" referrerpolicy="no-referrer" alt="magisk徽标"></p><p><span>假设您的手机具有自定义恢复功能，那么您首先需要的是Magisk zip文件。这是我们将在下一步中闪烁的文件。您可以在</span><a href='https://forum.xda-developers.com/apps/magisk/official-magisk-v7-universal-systemless-t3473445'><span>官方XDA线程中</span></a><span>找到最新版本的zip 。下载最新的zip并将其传输到您的手机/平板电脑，或直接在您的手机/平板电脑上下载。一种简单的方法是安装Magisk Manager应用程序（在第3步中找到），它会提示您下载当前可用的最新zip。</span></p><p><span>如果您的设备缺少自定义恢复，则可以执行以下任一操作：</span></p><ul><li><span>手动修补设备的启动映像并刷新它，或者</span></li><li><span>使用直接安装选项</span></li></ul><p><span>两者都存在于Magisk Manager中。但是，建议使用自定义恢复来闪烁Magisk。</span></p><h3><a name="2-flash-magisk" class="md-header-anchor"></a><span>2. Flash Magisk</span></h3><p><img src="https://www.xda-developers.com/files/2018/03/TWRP.png" referrerpolicy="no-referrer" alt="TWRP"></p><p><span>接下来，我们将进入恢复模式并刷新zip文件。</span><a href='https://www.xda-developers.com/how-to-boot-to-recovery/'><span>借助本指南，</span></a><span>了解如何在设备上启动进入恢复模式。它通常是电源按钮和音量键的某种组合。引导到自定义恢复后，请按照以下步骤操作：</span></p><ol><li><span>在恢复模式下，选择“</span><strong><span>安装”</span></strong><span>按钮。</span></li><li><span>找到下载zip文件的文件夹。</span></li><li><span>选择压缩文件</span></li><li><span>滑动滑块以安装Magisk</span></li><li><span>点击</span><strong><span>重新启动系统</span></strong></li></ol><h3><a name="3安装magisk-manager应用程序" class="md-header-anchor"></a><span>3.安装Magisk Manager应用程序</span></h3><p><img src="https://www.xda-developers.com/files/2018/03/magisk_manager_1.jpg" referrerpolicy="no-referrer" alt="魔法经理"></p><p><span>现在，Magisk框架已安装在您的设备上。要对其进行管理，您将需要适当地命名为Magisk Manager。这就是允许您安装模块的原因。</span><a href='https://github.com/topjohnwu/Magisk/releases/'><span>在此处下载最新的Magisk Manager APK，</span></a><span>并确保您在“设置”中启用了“</span><a href='https://www.xda-developers.com/sideload-apps-how-to/'><span>未知来源</span></a><span>”。安装该应用程序并打开它。</span></p><p><span>Manager应用程序允许您调整根设置并安装模块，这些模块是可安装的模块。该应用程序还可以作为大量模块的存储库，这些模块可以轻松扩展设备的功能。使用Manager应用程序是充分利用此根方法的重要部分。</span></p><h3><a name="4验证" class="md-header-anchor"></a><span>4.验证</span></h3><p><img src="https://www.xda-developers.com/files/2018/03/magisk-manager-1024x521.png" referrerpolicy="no-referrer" alt="魔法经理"></p><p><span>最后一步是验证一切是否正常。打开新安装的Manager应用程序。我们希望在应用程序中看到一堆绿色的复选标记。这表示您已成功获得root。做得好！</span></p><p><span>接下来，我们要确保您的设备仍然通过Google的SafetyNet检查。修改系统后，SafetyNet会阻止Google Pay之类的应用程序正常工作。Magisk通过使系统保持不变来解决此问题。选择“点击以开始SafetyNet检查”按钮。如果您在按钮下方看到两个绿色的复选标记，则表明您的设备已通过检查。Google偶尔会通过新的Android Security Patch更新来打破此错误，但是Magisk开发人员会在出现这种情况时发布修复程序。万一您在Custom ROM上，维护人员必须进行工作以解决SafetyNet出现的问题。您还必须注意，如果您修改设备的系统分区，SafetyNet可能会损坏。</span></p><p>&nbsp;</p></div>
+</body>
+</html>
